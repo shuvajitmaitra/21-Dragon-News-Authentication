@@ -12,7 +12,7 @@ const MainContent = () => {
       <Link to="/newsDetails">
         {news.map((singleNews) => (
           <div
-            key={singleNews.id}
+            key={singleNews._id}
             className="my-7 border rounded-lg p-5"
           >
             <div className="flex items-center justify-between px-4 py-2 bg-gray-300 rounded">

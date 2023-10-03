@@ -13,7 +13,6 @@ const LeftSideNav = () => {
       .then((data) => setCategories(data));
     setFilter(news);
   }, [news]);
-  console.log(14, filter);
 
   const handleCategory = (id) => {
     if (id > 0) {
@@ -34,21 +33,21 @@ const LeftSideNav = () => {
       >
         All Category
       </h2>
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <h3
           className="text-lg w-full px-6 py-3 rounded-md font-medium text-gray-300 hover:bg-gray-300 hover:text-black"
-          key={category.id}
+          key={index}
           onClick={() => handleCategory(category.id)}
         >
           {category.name}
         </h3>
       ))}
-      {filter.map((singleNews) => (
+      {filter.map((singleNews, index) => (
         <div
-          key={singleNews.id}
+          key={index}
           className="my-3"
         >
-          {console.log(singleNews.author.published_date)}
+          w
           <img
             src={singleNews.image_url}
             className="block right-0 left-0 mx-auto"

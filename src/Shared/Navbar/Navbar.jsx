@@ -1,8 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 
 import userPhoto from "../../assets/user.png";
+import { useContext } from "react";
+import { NewsContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
+  const { user } = useContext(NewsContext);
+
   const navLink = (
     <>
       <li>
@@ -57,10 +61,21 @@ const Navbar = () => {
         <div className="w-10 rounded-full">
           <img src={userPhoto} />
         </div>
-        <Link to="/login">
-          {" "}
-          <a className="btn rounded btn-sm bg-gray-900 text-white">Login</a>
-        </Link>
+        {user ? (
+          <Link to="/login">
+            {" "}
+            <button className="btn rounded btn-sm bg-gray-900 text-white">
+              Sign Out
+            </button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            {" "}
+            <button className="btn rounded btn-sm bg-gray-900 text-white">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

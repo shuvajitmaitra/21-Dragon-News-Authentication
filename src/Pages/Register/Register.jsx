@@ -1,14 +1,27 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
-
-const handleRegister = (e) => {
-  e.preventDefault();
-  const form = new FormData(e.currentTarget);
-  console.log(form.get("email"));
-  console.log(form.get("password"));
-};
+import { useContext } from "react";
+import { NewsContext } from "../../Context/AuthContext";
 
 const Register = () => {
+  const { createUser } = useContext(NewsContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+
+    //  authentication call....
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .then((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div className="max-w-screen-xl mx-auto space-y-6">
       <Navbar></Navbar>
@@ -36,7 +49,7 @@ const Register = () => {
           <input
             type="text"
             placeholder="photoURl"
-            name="photoURl"
+            name="photo"
             className="input input-bordered"
             required
           />
