@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import userPhoto from "../../assets/user.png";
 
@@ -57,7 +57,10 @@ const Navbar = () => {
         <div className="w-10 rounded-full">
           <img src={userPhoto} />
         </div>
-        <a className="btn rounded btn-sm bg-gray-900 text-white">Login</a>
+        <Link to="/login">
+          {" "}
+          <a className="btn rounded btn-sm bg-gray-900 text-white">Login</a>
+        </Link>
       </div>
     </div>
   );
