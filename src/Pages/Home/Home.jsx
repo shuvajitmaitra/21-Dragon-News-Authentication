@@ -25,7 +25,7 @@ const Home = () => {
           </Link>
         </Marquee>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 ">
+      <div className="grid grid-cols-2 md:grid-cols-4 my-14 ">
         <div>
           <LeftSideNav></LeftSideNav>
         </div>
