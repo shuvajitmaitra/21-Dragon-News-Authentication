@@ -4,6 +4,7 @@ import LeftSideNav from "../../Shared/LeftSideNav/LeftSideNav";
 import Navbar from "../../Shared/Navbar/Navbar";
 import RightSideNav from "../../Shared/RightSideNav/RightSideNav";
 import Marquee from "react-fast-marquee";
+import MainContent from "../../MainContent/MainContent";
 
 const Home = () => {
   return (
@@ -25,12 +26,12 @@ const Home = () => {
           </Link>
         </Marquee>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 my-14 ">
+      <div className="grid grid-cols-2 md:grid-cols-4 my-14 gap-6 ">
         <div>
           <LeftSideNav></LeftSideNav>
         </div>
         <div className="col-span-2">
-          <h1>News coming soon .......</h1>
+          <MainContent />
         </div>
         <div>
           <RightSideNav></RightSideNav>
