@@ -13,7 +13,7 @@ export const NewsContext = createContext(null);
 const AuthContext = ({ children }) => {
   const [news, setNews] = useState([]);
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   console.log(user);
 

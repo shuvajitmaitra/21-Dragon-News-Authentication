@@ -30,7 +30,7 @@ const NewsDetails = () => {
             <div className="flex items-center justify-between px-4 py-2 bg-gray-300 rounded">
               <div className="flex items-center gap-3">
                 <img
-                  src={singleNews.author.img}
+                  src={singleNews?.author?.img}
                   className="w-[40px] h-[40px] rounded-full"
                 />
                 <div>
@@ -46,19 +46,19 @@ const NewsDetails = () => {
               </div>
             </div>
             <h2 className="text-xl font-bold text-black py-3">
-              {singleNews.title}
+              {singleNews?.title}
             </h2>
             <img
-              src={singleNews.image_url}
+              src={singleNews?.image_url}
               className="block right-0 left-0 mx-auto"
             />
-            <p className="py-4">{singleNews.details}</p>
+            <p className="py-4">{singleNews?.details}</p>
 
             <div className="border-b-2 border-b-gray-200 my-4"></div>
             <div className="flex items-center justify-between ">
-              <p>{singleNews.rating.number}</p>
+              <p>{singleNews?.rating?.number}</p>
               <p className="flex items-center gap-2">
-                <FaEye /> {singleNews.total_view}
+                <FaEye /> {singleNews?.total_view}
               </p>
             </div>
           </div>
