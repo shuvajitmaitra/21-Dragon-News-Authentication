@@ -18,13 +18,13 @@ const MainContent = () => {
             <div className="flex items-center justify-between px-4 py-2 bg-gray-300 rounded">
               <div className="flex items-center gap-3">
                 <img
-                  src={singleNews.author.img}
+                  src={singleNews?.author?.img}
                   className="w-[40px] h-[40px] rounded-full"
                 />
                 <div>
                   <h4 className="font-semibold mb-1">
-                    {singleNews.author.name ? (
-                      singleNews.author.name
+                    {singleNews?.author?.name ? (
+                      singleNews?.author?.name
                     ) : (
                       <i>{"anonymous"}</i>
                     )}
@@ -38,17 +38,17 @@ const MainContent = () => {
               </div>
             </div>
             <h2 className="text-xl font-bold text-black py-3">
-              {singleNews.title}
+              {singleNews?.title}
             </h2>
             <img
-              src={singleNews.image_url}
+              src={singleNews?.image_url}
               className="block right-0 left-0 mx-auto"
             />
-            {singleNews.details.length < 200 ? (
-              <p>{singleNews.details}</p>
+            {singleNews?.details?.length < 200 ? (
+              <p>{singleNews?.details}</p>
             ) : (
               <p>
-                {singleNews.details.slice(0, 200)}
+                {singleNews?.details?.slice(0, 200)}
                 {".... "}
                 <Link to={`/news-details/${singleNews._id}`}>
                   <button className="text-orange-500 block">Read More</button>

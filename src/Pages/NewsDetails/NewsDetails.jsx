@@ -11,11 +11,7 @@ const NewsDetails = () => {
 
   const { id } = useParams();
 
-  console.log(id);
-
   const singleNews = news.find((singleNews) => singleNews._id === id);
-
-  console.log(singleNews);
 
   return (
     <div className="max-w-screen-xl mx-auto">
@@ -39,11 +35,7 @@ const NewsDetails = () => {
                 />
                 <div>
                   <h4 className="font-semibold mb-1">
-                    {singleNews.author.name ? (
-                      singleNews.author.name
-                    ) : (
-                      <i>{"anonymous"}</i>
-                    )}
+                    {singleNews?.author?.name}
                   </h4>
                   <p>{singleNews?.author?.published_date?.split(" ")[0]}</p>
                 </div>
