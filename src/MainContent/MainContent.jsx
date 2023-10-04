@@ -29,7 +29,7 @@ const MainContent = () => {
                       <i>{"anonymous"}</i>
                     )}
                   </h4>
-                  <p>{singleNews.author.published_date}</p>
+                  <p>{singleNews?.author?.published_date?.split(" ")[0]}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -44,8 +44,18 @@ const MainContent = () => {
               src={singleNews.image_url}
               className="block right-0 left-0 mx-auto"
             />
-            <p>{singleNews.details}</p>
-            <button className="text-orange-400">Read More</button>
+            {singleNews.details.length < 200 ? (
+              <p>{singleNews.details}</p>
+            ) : (
+              <p>
+                {singleNews.details.slice(0, 200)}
+                {".... "}
+                <Link to={`/news-details/${singleNews._id}`}>
+                  <button className="text-orange-500 block">Read More</button>
+                </Link>
+              </p>
+            )}
+
             <div className="border-b-2 border-b-gray-200 my-4"></div>
             <div className="flex items-center justify-between ">
               <p>{singleNews.rating.number}</p>

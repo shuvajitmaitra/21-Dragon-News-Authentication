@@ -47,7 +47,6 @@ const LeftSideNav = () => {
           key={index}
           className="my-3"
         >
-          w
           <img
             src={singleNews.image_url}
             className="block right-0 left-0 mx-auto"

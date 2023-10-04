@@ -16,7 +16,12 @@ const RightSideNav = () => {
   return (
     <div>
       <div className="space-y-3">
-        <h3 className="text-lg font-semibold ">Login With</h3>
+        <h2
+          className="text-xl font-semibold text-black
+       pb-4"
+        >
+          Login With
+        </h2>
         <p className="flex items-center justify-center gap-2 border border-black hover:border hover:border-blue-500 hover:text-blue-500 rounded-md w-full py-2">
           <FaGoogle></FaGoogle>
           <span className="font-semibold">Login With Google</span>
@@ -27,7 +32,12 @@ const RightSideNav = () => {
         </p>
       </div>
       <div className="py-8">
-        <h3 className="text-lg font-semibold mb-3">Find Us On</h3>
+        <h3
+          className="text-xl font-semibold text-black
+       pb-4"
+        >
+          Find Us On
+        </h3>
         <p className="flex items-center p-4 gap-2 border border-black font-medium  rounded-t-md w-full">
           <FaFacebook></FaFacebook>
           <span className="font-semibold">Facebook</span>

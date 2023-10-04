@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import PropTypes from "prop-types";
 import auth from "../Config/firebase.config";
@@ -23,11 +24,15 @@ const AuthContext = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // Log out user................
+  const logOut = () => {
+    return signOut(auth);
+  };
+
   // onAuthStateChanged.......
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser);
     });
   }, []);
 
@@ -38,7 +43,7 @@ const AuthContext = ({ children }) => {
       .then((data) => setNews(data));
   }, []);
 
-  const Authentication = { user, news, createUser, signInUser };
+  const Authentication = { user, news, createUser, signInUser, logOut };
   return (
     <NewsContext.Provider value={Authentication}>
       {children}

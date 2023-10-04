@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { NewsContext } from "../../Context/AuthContext";
 
 const Navbar = () => {
-  const { user } = useContext(NewsContext);
+  const { user, logOut } = useContext(NewsContext);
 
   const navLink = (
     <>
@@ -22,6 +22,17 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  // handle log out button ...........
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("Logout successfully!!!");
+      })
+      .then((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -64,7 +75,10 @@ const Navbar = () => {
         {user ? (
           <Link to="/login">
             {" "}
-            <button className="btn rounded btn-sm bg-gray-900 text-white">
+            <button
+              onClick={handleLogOut}
+              className="btn rounded btn-sm bg-gray-900 text-white"
+            >
               Sign Out
             </button>
           </Link>
